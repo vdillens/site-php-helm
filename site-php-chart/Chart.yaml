@@ -1,0 +1,13 @@
+apiVersion: v2
+name: site-php
+version: "1.0"
+description: Mon site php
+keywords:
+  - php
+  - prenom
+  - application
+home: www.vdillenschneider.fr
+maintainers: 
+  - name: Vincent DILLENSCHNEIDER
+    email: dillenschneider.v@gmail.com
+appVersion: "2.0"

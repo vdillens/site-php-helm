@@ -1,0 +1,17 @@
+apiVersion: v1 
+kind: Service 
+metadata:
+  name: service-mon-php
+spec:
+# On indique le type Nodeport
+  type: NodePort
+  selector:
+    app: mon-php
+  ports:
+    # 3 types de ports
+    # nodePort - un port static qui sera assigné à chaque noeud du cluster
+    # port - port exposé en interne du cluster
+    # targetPort - port du conteneur
+    - nodePort: {{ .Values.nodePort }}
+      port: {{ .Values.clusterPort }} 
+      targetPort: {{ .Values.sitePort }}

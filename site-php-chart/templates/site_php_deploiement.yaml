@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mes-sites-php
+spec:
+  replicas: 7
+  selector:
+    matchLabels:
+      app: mon-php
+  template:
+    metadata:
+      labels:
+        app: mon-php
+    spec:
+      containers:
+      - name: mon-ctn-php
+        image: vdillens/site-php-image:2.0
+        ports:
+        - containerPort: {{ .Values.sitePort }}
+        env:
+        - name: ENV_PRENOM
+          value: {{ .Values.envPrenom }}
+

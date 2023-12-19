@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "properties": {
+      "envPrenom": {
+        "description": "variable prenom a utiliser",
+        "type": "string"
+      },
+      "sitePort": {
+        "description": "Port du conteneur",
+        "type": "integer"
+      },
+      "nodePort": {
+        "description": "nodePort du service",
+        "minimum": 30000,
+        "maximum": 32767,
+        "type": "integer"
+      },
+      "clusterPort": {
+        "description": "Port interne au cluster K8s",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "envPrenom",
+      "sitePort",
+      "nodePort",
+      "clusterPort"
+    ],
+    "title": "Values",
+    "type": "object"
+  }
